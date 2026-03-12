@@ -1,0 +1,123 @@
+{
+    "tasks": [
+        {
+            "task_name": "do todo",
+            "id": "1",
+            "status": 0,
+            "task_date": "today",
+            "due_date": null,
+            "recurrence": null
+        },
+        {
+            "task_name": "learn something",
+            "id": "2",
+            "status": 1,
+            "task_date": "2025-12-10 08:51:50",
+            "due_date": null,
+            "recurrence": null
+        },
+        {
+            "task_name": "do future",
+            "id": "3",
+            "status": 1,
+            "task_date": "2025-12-10 08:56:57",
+            "due_date": null,
+            "recurrence": null
+        },
+        {
+            "task_name": "nigga",
+            "id": "4",
+            "status": 1,
+            "task_date": "2025-12-10 20:45:21",
+            "due_date": null,
+            "recurrence": null
+        },
+        {
+            "task_name": "kill niggas",
+            "id": "5",
+            "status": 0,
+            "task_date": "2025-12-10 20:52:17",
+            "due_date": null,
+            "recurrence": null
+        },
+        {
+            "task_name": "do a check mark for tasks",
+            "id": "6",
+            "status": 0,
+            "task_date": "2025-12-12 08:15:16",
+            "due_date": null,
+            "recurrence": null
+        },
+        {
+            "task_name": "revive niggas",
+            "id": "ad393428",
+            "status": 0,
+            "task_date": "2025-12-27 17:37:17",
+            "due_date": null,
+            "recurrence": null
+        },
+        {
+            "task_name": "nononon",
+            "id": "14da37f0",
+            "status": 0,
+            "task_date": "2025-12-27 19:25:36",
+            "due_date": null,
+            "recurrence": null
+        },
+        {
+            "task_name": "learn magichhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+            "id": "126b5f13",
+            "status": 0,
+            "task_date": "2025-12-27 19:27:17",
+            "due_date": "11-02-2026",
+            "recurrence": {
+                "recurring_type": "Annually",
+                "interval": null
+            }
+        },
+        {
+            "task_name": "some words",
+            "id": "c1c74682",
+            "status": 0,
+            "task_date": "2025-12-27 19:28:11",
+            "due_date": "10-02-2026",
+            "recurrence": {
+                "recurring_type": "Daily",
+                "interval": null
+            }
+        },
+        {
+            "task_name": "re:zero",
+            "id": "1507b404-bba9-44",
+            "status": 0,
+            "task_date": "2025-12-27 19:40:45",
+            "due_date": "10-02-2026",
+            "recurrence": {
+                "recurring_type": "Daily",
+                "interval": null
+            }
+        },
+        {
+            "task_name": "butt",
+            "id": "55faf0f1-da9a-42",
+            "status": 0,
+            "task_date": "2025-12-27 20:35:22",
+            "due_date": "09-02-2026",
+            "recurrence": {
+                "recurring_type": "Daily",
+                "interval": null
+            }
+        },
+        {
+            "task_name": "programming",
+            "id": "8b151ea0-7b41-45",
+            "status": 1,
+            "task_date": "2026-01-10 17:25:41",
+            "due_date": "09-02-2026",
+            "recurrence": {
+                "recurring_type": "Daily",
+                "interval": null
+            }
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+ 
+
+
+#---------------SIDE PANELS RESIZING-----------------------------
+
+self.visual = ft.Container(
+            width=1, padding=0, margin=0,                                   
+            content=ft.VerticalDivider(
+                width=1,
+                color=ft.Colors.BLUE_GREY_600, 
+            ), 
+            bgcolor=ft.Colors.TRANSPARENT,
+        )
+        self.resize_handle = ft.GestureDetector(
+            on_pan_update=self.on_horizontal_drag,
+            on_hover= self.on_hover,  drag_interval=45,
+            mouse_cursor=ft.MouseCursor.RESIZE_COLUMN,
+            content=self.visual,
+        )
+ def on_horizontal_drag(self,e: ft.DragUpdateEvent):
+        val = e.global_position.x
+        print(val)
+        new_width = min(600,(max(50, val)))
+        print(new_width)
+        self.tabs_area.width = new_width
+        self.tabs_area.update()
+
+
+    def on_hover(self):
+        print(self.tabs_area.width)
+        self.resize_handle.mouse_cursor=ft.MouseCursor.RESIZE_COLUMN
+
+#------------------TURN OFF USER MULTILINE (SHIFT+ENTER)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
