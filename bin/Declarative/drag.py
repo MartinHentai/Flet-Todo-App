@@ -1,31 +1,18 @@
 import flet as ft
+import asyncio
 
+
+ANIM_DURATION = 600
+OFF_ANIMATION_AFTER = ANIM_DURATION/1000 + 0.05
 
 @ft.component
 def drag(i, num, func, last_droped):
     width= 800
-    height= 50
     is_dragged, set_drag_over = ft.use_state(False)
     is_hovered, handle_hover = ft.use_state(False)
-    is_droped, set_droped = ft.use_state(False)
-
-    def switch_is_droped():
-        print("HALLO")
-        last_droped = None
-
-    set_droped(num == last_droped)
-
-    
-
-
 
     def render_hover(e):
-        handle_hover(e.data == True)
-
-        
-
-    
-    
+        handle_hover(e.data == True) 
 
     bg_color = ft.Colors.WHITE10 if ( is_hovered) else ft.Colors.TRANSPARENT
     
@@ -52,7 +39,6 @@ def drag(i, num, func, last_droped):
         e.control.parent.parent.parent.parent.opacity = n
 
 
-
     return ft.DragTarget(
         expand=1,     
         on_will_accept=will_accept,
@@ -67,7 +53,7 @@ def drag(i, num, func, last_droped):
                     bgcolor=ft.Colors.TRANSPARENT,
                 ),
                 ft.Draggable( 
-                    data=i,  
+                    data=i, 
                     content=ft.Container(
                         height=40,
                         width=width,
@@ -76,9 +62,8 @@ def drag(i, num, func, last_droped):
                         on_hover= render_hover,
                         bgcolor=bg_color,
                         content=ft.AnimatedSwitcher(
-                            duration=600 if is_droped  else 0,
+                            duration=ANIM_DURATION if last_droped  else 0,
                             reverse_duration=0,
-                            on_animation_end=lambda e: set_droped(False),
                             transition=ft.AnimatedSwitcherTransition.FADE , 
                             switch_in_curve=ft.AnimationCurve.EASE_IN_CUBIC,
                             content=ft.Row(
@@ -132,7 +117,11 @@ def drags():
         set_droped(moved_item)
         set_items(copy)
 
-    
+        async def clear_drop_state():
+            await asyncio.sleep(OFF_ANIMATION_AFTER) # Wait 650ms (just slightly longer than your 600ms fade)
+            set_droped(None)
+
+        ft.context.page.run_task(clear_drop_state)
 
 
 
@@ -144,7 +133,7 @@ def drags():
             # opacity=0.5,
             expand=1,
             spacing=3,
-            controls=[drag(i=i, num=num, func=reorder,last_droped=last_droped) for i, num in enumerate(items)]
+            controls=[drag(i=i, num=num, func=reorder,last_droped=last_droped==num) for i, num in enumerate(items)]
         )
     )
 
